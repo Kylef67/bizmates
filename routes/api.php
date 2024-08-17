@@ -9,7 +9,7 @@ use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\GeoapifyController;
 use App\Http\Controllers\MapController;
-use App\Http\Controllers\OpenweathermapController;
+use App\Http\Controllers\OpenWeatherMapController;
 use App\Http\Controllers\Settings\PasswordController;
 use App\Http\Controllers\Settings\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -27,4 +27,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/map-tile/{z}/{x}/{y}', [GeoapifyController::class, 'getTile']);
 Route::get('/search', [GeoapifyController::class, 'search']);
-Route::get('/forecast' , [OpenweathermapController::class, 'getForecast']);
+Route::get('/forecast' , [OpenWeatherMapController::class, 'getForecast']);
