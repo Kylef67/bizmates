@@ -14,9 +14,9 @@ $appCss = mix('dist/css/app.css');
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>{{ $appCss }}</title>
+  <title>{{ config('app.name') }}</title>
 
-  <link rel="stylesheet" href="{{ asset($appCss) }}">
+  <link rel="stylesheet" href="{{ (str_starts_with($appCss, '//') ? 'http:' : '').$appCss }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
@@ -27,6 +27,6 @@ $appCss = mix('dist/css/app.css');
     window.config = @json($config);
   </script>
 
-  <script src="{{ asset($appJs) }}"></script>
+  <script src="{{ (str_starts_with($appJs, '//') ? 'http:' : '').$appJs }}"></script>
 </body>
 </html>
