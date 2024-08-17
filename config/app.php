@@ -237,4 +237,9 @@ return [
 
     ],
 
+    'geoapify_api_key' => env('GEOAPIFY_API_KEY', ''),
+    'geoapify_api_url' => env('GEOAPIFY_API_URL', ''),
+    'geoapify_map_url' => env('GEOAPIFY_MAP_URL', ''),
+    'openweathermap_api_key' => env('OPENWEATHERMAP_API_KEY', ''),
+    'openweathermap_api_url' => env('OPENWEATHERMAP_API_URL', '')
 ];

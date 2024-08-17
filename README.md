@@ -1,71 +1,65 @@
-# Laravel-Vue SPA 
+# Weather and Places Search Application
 
-<a href="https://github.com/cretueusebiu/laravel-vue-spa/actions"><img src="https://github.com/cretueusebiu/laravel-vue-spa/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/cretueusebiu/laravel-vue-spa"><img src="https://poser.pugx.org/cretueusebiu/laravel-vue-spa/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/cretueusebiu/laravel-vue-spa"><img src="https://poser.pugx.org/cretueusebiu/laravel-vue-spa/v/stable.svg" alt="Latest Stable Version"></a>
+## Overview
 
-> A Laravel-Vue SPA starter kit.
+This project provides a dynamic web application for searching venues and viewing weather forecasts. The application leverages the Geoapify Maps API for venue search and the OpenWeatherMap API for weather data. The UI and UX implementation prioritize a clean and intuitive experience, ensuring users can easily search for places and view detailed weather forecasts for selected cities.
 
-<p align="center">
-<img src="https://i.imgur.com/NHFTsGt.png">
-</p>
+## UI and UX Implementation
 
-## Features
+### User Interface
 
-- Laravel 8
-- Vue + VueRouter + Vuex + VueI18n + ESlint
-- Pages with dynamic import and custom layouts
-- Login, register, email verification and password reset
-- Authentication with JWT
-- Socialite integration
-- Bootstrap 5 + Font Awesome 5
+- **City Selector**: Users can select cities from a dropdown, which dynamically updates the map view and weather forecast based on their selection.
+- **Category Search**: The category input allows users to search for places based on predefined categories, with a user-friendly chip-style interface for selected categories.
+- **Weather Forecast**: Displays a detailed 5-day weather forecast, grouped by day, including hourly temperature and weather conditions with corresponding icons.
 
-## Installation
+### User Experience
 
-- `composer create-project --prefer-dist cretueusebiu/laravel-vue-spa`
-- Edit `.env` and set your database connection details
-- (When installed via git clone or download, run `php artisan key:generate` and `php artisan jwt:secret`)
-- `php artisan migrate`
-- `npm install`
+- **Real-Time Updates**: As users type in the category search input or select a city, the application updates search results and weather forecasts in real time.
+- **Responsive Design**: The layout adapts to various screen sizes, providing an optimal viewing experience on both desktop and mobile devices.
+- **Visual Feedback**: The search input includes a loading spinner to indicate when data is being fetched, and error handling is in place for API failures.
 
-## Usage
+### Code Implementation
 
-#### Development
+- **Vue.js for Frontend**: The frontend is built using Vue.js, ensuring a reactive and component-based architecture for efficient UI updates and state management.
+- **Leaflet for Maps**: Utilizes Leaflet for interactive maps, with custom markers and popups to enhance user experience.
+- **Axios for API Calls**: Axios handles asynchronous requests to Geoapify and OpenWeatherMap, ensuring reliable data fetching and error handling.
 
-```bash
-npm run dev
-```
+## Live Demo
 
-#### Production
+You can view a live demo of the application at [http://ec2-52-74-90-194.ap-southeast-1.compute.amazonaws.com/](http://ec2-52-74-90-194.ap-southeast-1.compute.amazonaws.com/).
 
-```bash
-npm run build
-```
+## Setup
 
-## Socialite
+To set up the project locally, follow these steps:
 
-This project comes with GitHub as an example for [Laravel Socialite](https://laravel.com/docs/5.8/socialite).
+1. **Clone the Repository**
 
-To enable the provider create a new GitHub application and use `https://example.com/api/oauth/github/callback` as the Authorization callback URL.
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
 
-Edit `.env` and set `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` with the keys form your GitHub application.
+2. **Set Up Environment Variables**
+    ```bash
+    GEOAPIFY_API_KEY=<your_geoapify_api_key>
+    OPENWEATHERMAP_API_KEY=<your_openweathermap_api_key>
+    ```
 
-For other providers you may need to set the appropriate keys in `config/services.php` and redirect url in `OAuthController.php`.
+3. **Install Dependencies**
+    ```bash
+    composer install
+    npm install
+    npm run build or npm run dev
 
-## Email Verification
+    ```
 
-To enable email verification make sure that your `App\User` model implements the `Illuminate\Contracts\Auth\MustVerifyEmail` contract.
 
-## Testing
+## Requirements
 
-```bash
-# Run unit and feature tests
-vendor/bin/phpunit
+- **PHP: 8.0.3**
+- **Node.js: 14.21.3**
 
-# Run Dusk browser tests
-php artisan dusk
-```
+## License
 
-## Changelog
+MIT
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
