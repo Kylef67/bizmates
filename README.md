@@ -26,7 +26,7 @@ This project provides a dynamic web application for searching venues and viewing
 
 ## Live Demo
 
-You can view a live demo of the application at [http://ec2-52-74-90-194.ap-southeast-1.compute.amazonaws.com/](http://ec2-52-74-90-194.ap-southeast-1.compute.amazonaws.com/).
+You can view a live demo of the application at [http://ec2-52-74-90-194.ap-southeast-1.compute.amazonaws.com:8000/](http://ec2-52-74-90-194.ap-southeast-1.compute.amazonaws.com:8000/).
 
 ## Setup
 
